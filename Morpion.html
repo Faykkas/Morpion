@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion</title>
+</head>
+<body>
+    
+     <table>
+        <td><button  id="case0" onclick="player(0)"></button>
+        <td><button  id="case1" onclick="player(1)"></button>
+        <td><button  id="case2" onclick="player(2)"></button>
+        <tr>
+       <td><button id="case3" onclick="player(3)"></button>
+       <td><button id="case4" onclick="player(4)"></button>
+      <td><button id="case5" onclick="player(5)"></button>
+      </tr>
+      <tr>
+       <td><button  id="case6" onclick="player(6)"></button>
+       <td><button  id="case7" onclick="player(7)"></button>
+      <td><button  id="case8" onclick="player(8)"></button>
+      </tr>
+    </table>
+
+    <script>
+
+        // Le joueur actuel ; il est X
+        let currentPlayer = "X";
+    
+        // Fonction player (bouton on click), la fonction est appelée quand le bouton est cliqué, num est le numéro (1,2,3,4,5, etc.)
+        function player(num) {
+    
+            // Vérifie qui est le joueur
+            if (currentPlayer === "X") {
+                // Si c'est X, change le joueur à O
+                currentPlayer = "O";
+                
+            } 
+            else { // Sinon, passe à X si c'est le tour de O
+                currentPlayer = "X";
+    
+            }
+            // Ceci affecte le joueur actuel sur la bonne case (case1,2,3,4, etc.), et "num" correspond au numéro après player(...)
+            document.getElementById("case" + num).innerHTML = currentPlayer;
+        }
+    
+    </script>
